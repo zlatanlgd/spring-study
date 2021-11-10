@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="cn.zlatanlgd.pojo.Address">
+        <property name="address" value="成都"/>
+    </bean>
+    <bean id="student" class="cn.zlatanlgd.pojo.Student">
+        <!--普通值注入，使用value-->
+        <property name="name" value="lrc"/>
+
+        <!--bean注入，使用ref-->
+        <property name="address" ref="address"/>
+
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>三国演义</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+
+        <!--List-->
+        <property name="hobbys">
+            <list>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>电影</value>
+            </list>
+        </property>
+
+        <!--Map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1231111111"/>
+                <entry key="银行卡" value="123454523123124"/>
+            </map>
+        </property>
+
+        <!--Set-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>WOW</value>
+            </set>
+        </property>
+
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--Properties-->
+        <!--key=value-->
+        <property name="info">
+            <props>
+                <prop key="学号">202111121</prop>
+                <prop key="性别">男</prop>
+                <prop key="username">root</prop>
+                <prop key="password">112211</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
